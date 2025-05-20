@@ -12,7 +12,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $task = task::all();
+        return view('tasks.index', compact('tasks'));
     }
 
     /**
@@ -28,7 +29,9 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required|string|max:120'
+        ]);
     }
 
     /**
