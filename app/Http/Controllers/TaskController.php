@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\task;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -12,7 +12,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $task = task::all();
+        $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
     }
 
